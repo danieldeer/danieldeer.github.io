@@ -1,15 +1,29 @@
 /* Base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
+    background-color: #f7f8fc;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
 }
 
 /* Navigation */
 nav {
-    background-color: #007bff;
+    background-color: #343a40;
     padding: 10px 20px;
 }
 
@@ -18,22 +32,29 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 nav ul li {
     margin-right: 20px;
 }
 
+nav ul li:last-child {
+    margin-right: 0;
+}
+
 nav ul li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
 }
 
-/* Hero section */
+nav ul li a:hover {
+    color: #f8f9fa;
+}
+
+/* Hero Section */
 #hero {
-    background-image: url('hero.jpg'); /* Add your hero image here */
-    background-size: cover;
+    background: linear-gradient(to bottom, #4b79a1, #283e51);
     color: white;
     padding: 100px 20px;
     text-align: center;
@@ -42,12 +63,10 @@ nav ul li a {
 #hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: black;
 }
 
 #hero p {
     font-size: 1.5rem;
-    color: black;
 }
 
 .cta-button {
@@ -57,40 +76,84 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #218838;
 }
 
 /* Sections */
 section {
     padding: 50px 20px;
+    text-align: center;
 }
 
-h2 {
+section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-.service,
-.portfolio-item,
-.testimonial {
-    margin-bottom: 30px;
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Contact form */
-form {
+li {
+    margin-bottom: 10px;
+}
+
+.skills ul, .languages ul, #certifications ul {
     display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills ul li, .languages ul li, #certifications ul li {
+    display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
-form label {
+img.tech-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.services, .portfolio-item, .testimonial {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service, .portfolio-item, .testimonial {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.testimonial {
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial p {
+    font-style: italic;
     margin-bottom: 5px;
 }
 
-form input,
-form textarea {
-    margin-bottom: 15px;
+.contact-form input, .contact-form textarea {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    margin-bottom: 15px;
     border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -101,6 +164,7 @@ button {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -122,15 +186,21 @@ footer {
         align-items: center;
     }
     
-    #hero {
-        padding: 50px 10px;
-    }
-    
     #hero h1 {
         font-size: 2rem;
     }
     
     #hero p {
         font-size: 1rem;
+    }
+
+    .service, .portfolio-item, .testimonial {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .skills ul, .languages ul, #certifications ul {
+        flex-direction: column;
+        gap: 10px;
     }
 }
